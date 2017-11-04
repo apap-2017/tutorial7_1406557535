@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Daftar Mata Kuliah</title>
+</head>
+<div th:replace="fragments/header"></div>
+<div class="container">
+      <h1>All Mata Kuliah</h1>
+      
+      <table id="myTable">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>ID Course</th>
+        <th>Name</th>
+        <th>Credits</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course,iterationStatus: ${courses}">
+    	<td th:text="${iterationStatus.count}">No. 1</td>
+    	<td th:text="${course.id_course}">NPM</td>
+    	<td th:text="${course.name}">Name</td>
+    	<td th:text="${course.credits}">GPA</td>
+    	
+  		</tr>
+    </tbody>
+  </table>
+  
+      <br/><br/><br/><br/>
+      
+  	
+<div th:replace="fragments/footer"></div>
+</div>
+</html>
